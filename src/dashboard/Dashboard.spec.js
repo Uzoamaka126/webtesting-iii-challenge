@@ -12,17 +12,17 @@ let wrapper, closedButton, lockedButton;
 
 beforeEach(() => {
     wrapper = rtl.render(<Dashboard />);
+    closedButton = rtl.render(<Controls />);
+    lockedButton = rtl.render(<Display />)
 });
 
-describe('<Dashboard /> component spec', () => {
+describe('<Dashboard /> components', () => {
     
-    it('<Controls /> component', () => {
+    it('should show both the controls and display component', () => {
         const controls = rtl.render(<Controls />);
-        expect(controls).toBeInTheDocument();
-    });
-
-    it('<Display /> component', () => {
         const display = rtl.render(<Display />);
+
         expect(display).toBeInTheDocument();
+        expect(controls).toBeInTheDocument();
     });
 })
